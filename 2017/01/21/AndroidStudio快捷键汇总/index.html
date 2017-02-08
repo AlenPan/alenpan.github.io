@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Alen Pan在 Github 上的个人博客">
+    <meta name="keyword" content="keyword">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon" href="http://oj56axdy8.bkt.clouddn.com/image/jpg/pikachu.jpg">
+    <link rel="alternate" type="application/atom+xml" title="AlenPan" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <title>
+        
+        AndroidStudio快捷键汇总｜AlenPan&#39;s blog
+        
+    </title>
+
+    <link rel="canonical" href="http://alenpan.github.io/2017/01/21/AndroidStudio快捷键汇总/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/blog-style.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+</head>
+
+<style>
+
+    header.intro-header {
+        background-image: url('http://oj56axdy8.bkt.clouddn.com/image/jpg/Roaring-Animated-Lion-Wallpaper.jpg')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
+" data-ishome = "false" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated pulse" href="/">
+                <span class="brand-logo">
+                    AlenPan
+                </span>
+                's Blog
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+					
+                    
+                        
+							
+                        <li>
+                            <a href="/Tags/">Tags</a>
+                        </li>
+							
+						
+                    
+					
+					
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+//    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+<!-- Main Content -->
+
+<!--only post-->
+
+
+<img class="wechat-title-img"
+     src="http://oj56axdy8.bkt.clouddn.com/image/jpg/blog-bg-black-run.jpg">
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('http://oj56axdy8.bkt.clouddn.com/image/jpg/blog-bg-black-run.jpg')
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>AndroidStudio快捷键汇总</h1>
+                    
+                    <span class="meta">
+                         作者 Alen Pan
+                        <span>
+                          日期 2017-01-21
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                        <a class="tag" href="/tags/#AndroidStudio"
+                           title="AndroidStudio">AndroidStudio</a>
+                        
+                        <a class="tag" href="/tags/#keymap"
+                           title="keymap">keymap</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            AndroidStudio快捷键汇总
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <p>最近开始全面转向Android Studio开发了，经常要去查快捷键，索性汇总下，自己方便查找</p>
+<h2 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h2><table>
+<thead>
+<tr>
+<th>按键</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>F1</td>
+<td>帮助</td>
+</tr>
+<tr>
+<td>Alt(Option)+F1</td>
+<td>查找文件所在目录位置</td>
+</tr>
+<tr>
+<td>Alt(Option)+1</td>
+<td>快速打开或隐藏工程面板</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Alt(Option)+</td>
+<td>打开设置对话框</td>
+</tr>
+<tr>
+<td>Alt(Option)+Home</td>
+<td>跳转到导航栏</td>
+</tr>
+<tr>
+<td>Esc</td>
+<td>光标返回编辑框</td>
+</tr>
+<tr>
+<td>Shift+Esc</td>
+<td>光标返回编辑框,关闭无用的窗口</td>
+</tr>
+<tr>
+<td>Shift+Click</td>
+<td>关闭标签页</td>
+</tr>
+<tr>
+<td>F12</td>
+<td>把焦点从编辑器移到最近使用的工具窗口</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Alt(Option)+Y</td>
+<td>同步</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Alt(Option)+S</td>
+<td>打开设置对话框</td>
+</tr>
+<tr>
+<td>Alt(Option)+Shift+Inert</td>
+<td>开启/关闭列选择模式</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Alt(Option)+Shift+S</td>
+<td>打开当前项目/模块属性</td>
+</tr>
+<tr>
+<td>Alt(Option)+Shift+C</td>
+<td>查看文件的变更历史</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Shift+F10</td>
+<td>运行</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Shift+F9</td>
+<td>debug运行</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Alt(Option)+F12</td>
+<td>资源管理器打开文件夹</td>
+</tr>
+</tbody>
+</table>
+<h2 id="编辑"><a href="#编辑" class="headerlink" title="编辑"></a>编辑</h2><table>
+<thead>
+<tr>
+<th>按键</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl(Command)+C</td>
+<td>复制当前行或选中的内容</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+D</td>
+<td>粘贴当前行或选中的内容</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+X</td>
+<td>剪切当前行或选中的内容</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Y</td>
+<td>删除行</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Z</td>
+<td>倒退</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Shift+Z</td>
+<td>向前</td>
+</tr>
+<tr>
+<td>Alt(Option)+Enter</td>
+<td>自动修正</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Alt(Option)+L</td>
+<td>格式化代码</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Alt(Option)+I</td>
+<td>将选中的代码进行自动缩进编排</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Alt(Option)+O</td>
+<td>优化导入的类和包</td>
+</tr>
+<tr>
+<td>Alt(Option)+Insert</td>
+<td>得到一些Intention Action，可以生成构造器、Getter、Setter、将 <code>==</code> 改为 <code>equals()</code> 等</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Shift+V</td>
+<td>选最近使用的剪贴板内容并插入</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Alt(Option)+Shift+V</td>
+<td>简单粘贴</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Shift+Insert</td>
+<td>选最近使用的剪贴板内容并插入（同Ctrl(Command)+Shift+V）</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Enter</td>
+<td>在当前行的上面插入新行，并移动光标到新行（此功能光标在行首时有效）</td>
+</tr>
+<tr>
+<td>Shift+Enter</td>
+<td>在当前行的下面插入新行，并移动光标到新行</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+J</td>
+<td>自动代码</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Alt(Option)+T</td>
+<td>把选中的代码放在 <code>try{}</code> 、<code>if{}</code> 、 <code>else{}</code> 里</td>
+</tr>
+<tr>
+<td>Shift+Alt(Option)+Insert</td>
+<td>竖编辑模式</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+ <code>/</code></td>
+<td>注释 <code>//</code></td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Shift+ <code>/</code></td>
+<td>注释 <code>/*…*/</code></td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Shift+J</td>
+<td>合并成一行</td>
+</tr>
+<tr>
+<td>F2/Shift+F2</td>
+<td>跳转到下/上一个错误语句处</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Shift+Back</td>
+<td>跳转到上次编辑的地方</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Alt(Option)+Space</td>
+<td>类名自动完成</td>
+</tr>
+<tr>
+<td>Shift+Alt(Option)+Up/Down</td>
+<td>内容向上/下移动</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Shift+Up/Down</td>
+<td>语句向上/下移动</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Shift+U</td>
+<td>大小写切换</td>
+</tr>
+<tr>
+<td>Tab</td>
+<td>代码标签输入完成后，按 <code>Tab</code>，生成代码</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Backspace</td>
+<td>按单词删除</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Shift+Enter</td>
+<td>语句完成</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Alt(Option)+J</td>
+<td>用动态模板环绕</td>
+</tr>
+</tbody>
+</table>
+<h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><table>
+<thead>
+<tr>
+<th>按键</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl(Command)+F12</td>
+<td>显示当前文件的结构</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+H</td>
+<td>显示类继承结构图</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Q</td>
+<td>显示注释文档</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+P</td>
+<td>方法参数提示</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+U</td>
+<td>打开当前类的父类或者实现的接口</td>
+</tr>
+<tr>
+<td>Alt(Option)+Left/Right</td>
+<td>切换代码视图</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Alt(Option)+Left/Right</td>
+<td>返回上次编辑的位置</td>
+</tr>
+<tr>
+<td>Alt(Option)+Up/Down</td>
+<td>在方法间快速移动定位</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+B</td>
+<td>快速打开光标处的类或方法</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+W</td>
+<td>选中代码，连续按会有其他效果</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Shift+W</td>
+<td>取消选择光标所在词</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+ <code>-</code> / <code>+</code></td>
+<td>折叠/展开代码</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Shift+ <code>-</code> / <code>+</code></td>
+<td>折叠/展开全部代码</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Shift+<code>.</code></td>
+<td>折叠/展开当前花括号中的代码</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+ <code>]</code> / <code>[</code></td>
+<td>跳转到代码块结束/开始处</td>
+</tr>
+<tr>
+<td>F2 或 Shift+F2</td>
+<td>高亮错误或警告快速定位</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Shift+C</td>
+<td>复制路径</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Alt(Option)+Shift+C</td>
+<td>复制引用，必须选择类名</td>
+</tr>
+<tr>
+<td>Alt(Option)+Up/Down</td>
+<td>在方法间快速移动定位</td>
+</tr>
+<tr>
+<td>Shift+F1</td>
+<td>要打开编辑器光标字符处使用的类或者方法 <code>Java</code> 文档的浏览器</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+G</td>
+<td>定位行</td>
+</tr>
+</tbody>
+</table>
+<h2 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h2><table>
+<thead>
+<tr>
+<th>按键</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl(Command)+F</td>
+<td>在当前窗口查找文本</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Shift+F</td>
+<td>在指定环境下查找文本</td>
+</tr>
+<tr>
+<td>F3</td>
+<td>向下查找关键字出现位置</td>
+</tr>
+<tr>
+<td>Shift+F3</td>
+<td>向上一个关键字出现位置</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+R</td>
+<td>在当前窗口替换文本</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Shift+R</td>
+<td>在指定窗口替换文本</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+N</td>
+<td>查找类</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Shift+N</td>
+<td>查找文件</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Shift+Alt(Option)+N</td>
+<td>查找项目中的方法或变量</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+B</td>
+<td>查找变量的来源</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Alt(Option)+B</td>
+<td>快速打开光标处的类或方法</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Shift+B</td>
+<td>跳转到类或方法实现处</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+E</td>
+<td>最近打开的文件</td>
+</tr>
+<tr>
+<td>Alt(Option)+F3</td>
+<td>快速查找，效果和Ctrl(Command)+F相同</td>
+</tr>
+<tr>
+<td>F4</td>
+<td>跳转至定义变量的位置</td>
+</tr>
+<tr>
+<td>Alt(Option)+F7</td>
+<td>查询当前元素在工程中的引用</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+F7</td>
+<td>查询当前元素在当前文件中的引用，然后按 <code>F3</code> 可以选择</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Alt(Option)+F7</td>
+<td>选中查询当前元素在工程中的引用</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Shift+F7</td>
+<td>高亮显示匹配的字符，按 <code>Esc</code> 高亮消失</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Alt(Option)+F7</td>
+<td>查找某个方法的所有调用地方</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Shift+Alt(Option)+N</td>
+<td>查找类中的方法或变量</td>
+</tr>
+<tr>
+<td><em>Ctrl(Command)+Shift+O</em></td>
+<td><em>弹出显示查找内容</em></td>
+</tr>
+<tr>
+<td><em>Ctrl(Command)+Alt(Option)+Up/Down</em></td>
+<td><em>快速跳转搜索结果</em></td>
+</tr>
+<tr>
+<td><em>Ctrl(Command)+Shift+S</em></td>
+<td><em>高级搜索、搜索结构</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="重构"><a href="#重构" class="headerlink" title="重构"></a>重构</h2><table>
+<thead>
+<tr>
+<th>按键</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>F5</td>
+<td>复制</td>
+</tr>
+<tr>
+<td>F6</td>
+<td>移动</td>
+</tr>
+<tr>
+<td>Alt(Option)+Delete</td>
+<td>安全删除</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+U</td>
+<td>转到父类</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+O</td>
+<td>重写父类的方法</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+I</td>
+<td>实现方法</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Alt(Option)+N</td>
+<td>内联</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Alt(Option)+Shift+T</td>
+<td>弹出重构菜单</td>
+</tr>
+<tr>
+<td>Shift+F6</td>
+<td>重构-重命名</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Alt(Option)+M</td>
+<td>提取代码组成方法</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Alt(Option)+C</td>
+<td>将变量更改为常量</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Alt(Option)+V</td>
+<td>定义变量引用当前对象或者方法的返回值</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Alt(Option)+F</td>
+<td>将局部变量更改为类的成员变量</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Alt(Option)+P</td>
+<td>将变量更改为方法的参数</td>
+</tr>
+</tbody>
+</table>
+<h2 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h2><table>
+<thead>
+<tr>
+<th>按键</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>F8</td>
+<td>跳到下一步</td>
+</tr>
+<tr>
+<td>Shift+F8</td>
+<td>跳出函数、跳到下一个断点</td>
+</tr>
+<tr>
+<td>Alt(Option)+Shift+F8</td>
+<td>强制跳出函数</td>
+</tr>
+<tr>
+<td>F7</td>
+<td>进入代码</td>
+</tr>
+<tr>
+<td>Shift+F7</td>
+<td>智能进入代码</td>
+</tr>
+<tr>
+<td>Alt(Option)+Shift+F7</td>
+<td>强制进入代码</td>
+</tr>
+<tr>
+<td>Alt(Option)+F9</td>
+<td>运行至光标处</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Alt(Option)+F9</td>
+<td>强制运行至光标处</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+F2</td>
+<td>停止运行</td>
+</tr>
+<tr>
+<td>Alt(Option)+F8</td>
+<td>计算变量值</td>
+</tr>
+</tbody>
+</table>
+<h2 id="VCS"><a href="#VCS" class="headerlink" title="VCS"></a>VCS</h2><table>
+<thead>
+<tr>
+<th>按键</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alt(Option)+ <code>~</code></td>
+<td><code>VCS</code> 操作菜单</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+K</td>
+<td>提交更改</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+T</td>
+<td>更新项目</td>
+</tr>
+<tr>
+<td>Ctrl(Command)+Alt(Option)+Shift+D</td>
+<td>显示变化</td>
+</tr>
+</tbody>
+</table>
+
+                <hr>
+                
+                <!-- 多说 Share start -->
+                <div class="ds-share"
+                     style="text-align: right"
+                     data-thread-key="2017/01/21/AndroidStudio快捷键汇总/"
+                     data-title="AndroidStudio快捷键汇总"
+                     data-url="http://alenpan.github.io/2017/01/21/AndroidStudio快捷键汇总/"
+                     data-images=""
+                     data-content="最近开始全面转向Android Studio开发了，经常要去查快捷键，索性汇总下，自己方便查找... | AlenPan&#39;s blog ">
+                    <div class="ds-share-inline">
+                        <ul class="ds-share-icons-16">
+                            <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
+                            <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                            <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                            <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
+                        </ul>
+                        <div class="ds-share-icons-more">
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <!-- 多说 Share end-->
+                
+
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/2017/01/07/编译型语言、解释型语言、静态类型语言、动态类型语言概念与区别/" data-toggle="tooltip" data-placement="top"
+                           title="编译型语言、解释型语言、静态类型语言、动态类型语言概念与区别">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+                <!-- 多说评论框 start -->
+                <div class="comment">
+                    <div class="ds-thread"
+                         data-thread-key="2017/01/21/AndroidStudio快捷键汇总/"
+                         data-title="AndroidStudio快捷键汇总"
+                         data-url="http://alenpan.github.io/2017/01/21/AndroidStudio快捷键汇总/">
+                    </div>
+                </div>
+                <!-- 多说评论框 end -->
+                
+
+                
+
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#IDE"><span class="toc-text">IDE</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编辑"><span class="toc-text">编辑</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件"><span class="toc-text">文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查找"><span class="toc-text">查找</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重构"><span class="toc-text">重构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#调试"><span class="toc-text">调试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#VCS"><span class="toc-text">VCS</span></a></li></ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5 class="text-center">
+                        <a href="/tags/">FEATURED TAGS</a>
+                    </h5>
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#AndroidStudio"
+                           title="AndroidStudio">AndroidStudio</a>
+                        
+                        <a class="tag" href="/tags/#keymap"
+                           title="keymap">keymap</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    // dynamic User by Hux
+    var _user = 'alenpan';
+
+    // duoshuo comment query.
+    var duoshuoQuery = {short_name: _user};
+    (function () {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';
+        ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- 多说公共JS代码 end -->
+
+
+
+
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/pan-can-hua-39">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/AlenPan99">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/AlenPan">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; AlenPan 2017
+                    <br>
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
+                    <br>
+                    Theme by <a href="https://haojen.github.io/">Haojen Ma</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/blog.js"></script>
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://alenpan.github.io/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','null','2.0.0');
+</script>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!--wechat title img-->
+<img class="wechat-title-img" src="http://oj56axdy8.bkt.clouddn.com/image/jpg/pikachu.jpg">
+</body>
+
+</html>
